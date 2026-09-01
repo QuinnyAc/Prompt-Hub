@@ -15,7 +15,7 @@ export default function PromptsPage() {
       <SiteHeader />
       <PageHero
         eyebrow="PROMPT PLAYBOOK"
-        title="缺哪种脑子，就请哪位专家上班。"
+        title="老板逼我做的"
         description="按资深策划、顶级架构师、世界级管理专家、思维训练教练、神经优化导师、数据分析师等专家角色分类。每条都写清输入、步骤、标准和防胡编要求。"
       />
       <section className="mx-auto max-w-[1440px] px-5 py-10 lg:px-10 lg:py-14">
