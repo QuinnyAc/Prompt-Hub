@@ -1,0 +1,49 @@
+name: 更新 AI 模型情报
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */3 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: intelligence-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 获取仓库
+        uses: actions/checkout@v4
+
+      - name: 配置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 更新并验证情报数据
+        env:
+          ARTIFICIAL_ANALYSIS_API_KEY: ${{ secrets.ARTIFICIAL_ANALYSIS_API_KEY }}
+        run: |
+          npm run intelligence:update
+          npm run intelligence:validate
+
+      - name: 提交变化
+        run: |
+          if git diff --quiet -- data/intelligence.json; then
+            echo "没有数据变化"
+            exit 0
+          fi
+          git config user.name "prompt-hub-bot"
+          git config user.email "prompt-hub-bot@users.noreply.github.com"
+          git add data/intelligence.json
+          git commit -m "data: 更新 AI 模型情报"
+          git push

@@ -1,0 +1,249 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-01T02:23:30.190Z",
+  "sources": {
+    "artificialAnalysis": {
+      "name": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/leaderboards/models",
+      "mode": "editorial-seed",
+      "models": [
+        {
+          "rank": 1,
+          "name": "Claude Opus 5 (max)",
+          "maker": "Anthropic",
+          "score": 63
+        },
+        {
+          "rank": 2,
+          "name": "GPT-5.6 Sol (max)",
+          "maker": "OpenAI",
+          "score": 61
+        },
+        {
+          "rank": 3,
+          "name": "Grok 4.6 (high)",
+          "maker": "xAI",
+          "score": 61
+        }
+      ]
+    },
+    "lmarena": {
+      "name": "LMArena",
+      "url": "https://raw.githubusercontent.com/lmarena/arena-catalog/main/data/leaderboard-text.json",
+      "mode": "official-public-data",
+      "category": "english",
+      "models": [
+        {
+          "rank": 1,
+          "name": "gemini-3-pro",
+          "score": 1484.5,
+          "lowerBound": 1476.1,
+          "upperBound": 1492.8
+        },
+        {
+          "rank": 2,
+          "name": "gemini-2.5-pro",
+          "score": 1463.5,
+          "lowerBound": 1459.1,
+          "upperBound": 1467.9
+        },
+        {
+          "rank": 3,
+          "name": "claude-opus-4-5-20251101-thinking-32k",
+          "score": 1457.2,
+          "lowerBound": 1447.4,
+          "upperBound": 1467
+        },
+        {
+          "rank": 4,
+          "name": "grok-4.1",
+          "score": 1455.8,
+          "lowerBound": 1447.7,
+          "upperBound": 1463.9
+        },
+        {
+          "rank": 5,
+          "name": "grok-4.1-thinking",
+          "score": 1453.7,
+          "lowerBound": 1445.6,
+          "upperBound": 1461.8
+        },
+        {
+          "rank": 6,
+          "name": "claude-opus-4-5-20251101",
+          "score": 1452.3,
+          "lowerBound": 1442.6,
+          "upperBound": 1461.9
+        },
+        {
+          "rank": 7,
+          "name": "gpt-5.1-high",
+          "score": 1451.6,
+          "lowerBound": 1442.9,
+          "upperBound": 1460.2
+        },
+        {
+          "rank": 8,
+          "name": "claude-sonnet-4-5-20250929-thinking-32k",
+          "score": 1445.2,
+          "lowerBound": 1439.2,
+          "upperBound": 1451.2
+        },
+        {
+          "rank": 9,
+          "name": "mistral-large-3",
+          "score": 1444,
+          "lowerBound": 1433.1,
+          "upperBound": 1454.9
+        },
+        {
+          "rank": 10,
+          "name": "mistral-medium-2508",
+          "score": 1440.6,
+          "lowerBound": 1435.6,
+          "upperBound": 1445.6
+        },
+        {
+          "rank": 11,
+          "name": "claude-sonnet-4-5-20250929",
+          "score": 1440.6,
+          "lowerBound": 1434,
+          "upperBound": 1447.1
+        },
+        {
+          "rank": 12,
+          "name": "claude-opus-4-1-20250805-thinking-16k",
+          "score": 1436.5,
+          "lowerBound": 1431.4,
+          "upperBound": 1441.6
+        },
+        {
+          "rank": 13,
+          "name": "grok-3-preview-02-24",
+          "score": 1436.3,
+          "lowerBound": 1431.1,
+          "upperBound": 1441.5
+        },
+        {
+          "rank": 14,
+          "name": "chatgpt-4o-latest-20250326",
+          "score": 1431.9,
+          "lowerBound": 1427.7,
+          "upperBound": 1436.2
+        },
+        {
+          "rank": 15,
+          "name": "gpt-5.1",
+          "score": 1424.7,
+          "lowerBound": 1416.5,
+          "upperBound": 1433
+        },
+        {
+          "rank": 16,
+          "name": "claude-opus-4-1-20250805",
+          "score": 1424,
+          "lowerBound": 1419.2,
+          "upperBound": 1428.8
+        },
+        {
+          "rank": 17,
+          "name": "grok-4-1-fast-reasoning",
+          "score": 1422.5,
+          "lowerBound": 1413.1,
+          "upperBound": 1431.9
+        },
+        {
+          "rank": 18,
+          "name": "gpt-4.5-preview-2025-02-27",
+          "score": 1419.4,
+          "lowerBound": 1412.4,
+          "upperBound": 1426.4
+        },
+        {
+          "rank": 19,
+          "name": "amazon-nova-experimental-chat-10-20",
+          "score": 1418.4,
+          "lowerBound": 1408.7,
+          "upperBound": 1428.1
+        },
+        {
+          "rank": 20,
+          "name": "grok-4-0709",
+          "score": 1418,
+          "lowerBound": 1413,
+          "upperBound": 1423
+        },
+        {
+          "rank": 21,
+          "name": "gemini-2.5-flash",
+          "score": 1416.6,
+          "lowerBound": 1412.3,
+          "upperBound": 1420.9
+        },
+        {
+          "rank": 22,
+          "name": "o3-2025-04-16",
+          "score": 1416.5,
+          "lowerBound": 1411.9,
+          "upperBound": 1421.1
+        },
+        {
+          "rank": 23,
+          "name": "grok-4-fast-chat",
+          "score": 1415.2,
+          "lowerBound": 1404.8,
+          "upperBound": 1425.5
+        },
+        {
+          "rank": 24,
+          "name": "gemini-2.5-flash-preview-09-2025",
+          "score": 1412.8,
+          "lowerBound": 1407,
+          "upperBound": 1418.6
+        },
+        {
+          "rank": 25,
+          "name": "gpt-5-high",
+          "score": 1411,
+          "lowerBound": 1405.3,
+          "upperBound": 1416.6
+        },
+        {
+          "rank": 26,
+          "name": "gpt-5-chat",
+          "score": 1408.2,
+          "lowerBound": 1402.6,
+          "upperBound": 1413.8
+        },
+        {
+          "rank": 27,
+          "name": "grok-4-fast-reasoning",
+          "score": 1406.1,
+          "lowerBound": 1399.4,
+          "upperBound": 1412.8
+        },
+        {
+          "rank": 28,
+          "name": "claude-haiku-4-5-20251001",
+          "score": 1406,
+          "lowerBound": 1399.9,
+          "upperBound": 1412.2
+        },
+        {
+          "rank": 29,
+          "name": "gpt-4.1-2025-04-14",
+          "score": 1391.9,
+          "lowerBound": 1387.2,
+          "upperBound": 1396.6
+        },
+        {
+          "rank": 30,
+          "name": "nova-2-lite",
+          "score": 1387.5,
+          "lowerBound": 1376,
+          "upperBound": 1399
+        }
+      ]
+    }
+  }
+}
