@@ -16,8 +16,8 @@ import {
   TrendingUp,
   Workflow,
 } from 'lucide-react';
-import Link from 'next/link';
 
+import { SiteLink as Link } from '@/components/site-link';
 import { Badge } from '@/components/ui/badge';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -69,6 +69,8 @@ const stats = [
 ];
 
 export default function Home() {
+  const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
   return (
     <main className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-[#e8ebf2] bg-white/90 backdrop-blur-xl">
@@ -173,7 +175,7 @@ export default function Home() {
 
             <form
               className="mt-8 max-w-2xl rounded-2xl border border-[#dce2ee] bg-white p-2 shadow-[0_18px_55px_rgba(27,44,94,0.1)]"
-              action="/models"
+              action={siteBasePath ? `${siteBasePath}/models/` : '/models'}
             >
               <label htmlFor="task-search" className="sr-only">
                 描述你想用 AI 完成的任务

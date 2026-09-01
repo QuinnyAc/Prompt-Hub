@@ -9,11 +9,13 @@ import {
   ShieldCheck,
   Timer,
 } from 'lucide-react';
-import Link from 'next/link';
 
 import { Badge } from '@/components/ui/badge';
+import { SiteLink as Link } from '@/components/site-link';
 import { PageHero, SiteFooter, SiteHeader } from '@/components/site-shell';
 import { models } from '@/lib/site-data';
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return models.map((model) => ({ slug: model.slug }));

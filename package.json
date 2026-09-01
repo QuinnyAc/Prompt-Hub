@@ -13,7 +13,8 @@
     "format": "oxfmt",
     "db:generate": "drizzle-kit generate",
     "intelligence:update": "node scripts/update-intelligence.mjs",
-    "intelligence:validate": "node scripts/validate-intelligence.mjs"
+    "intelligence:validate": "node scripts/validate-intelligence.mjs",
+    "pages:prepare": "node scripts/prepare-github-pages.mjs"
   },
   "dependencies": {
     "react": "19.2.6",

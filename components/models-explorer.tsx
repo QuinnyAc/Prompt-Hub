@@ -1,9 +1,9 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useSyncExternalStore } from 'react';
 import { ArrowDown, ArrowRight, ArrowUp, Minus, Search } from 'lucide-react';
-import Link from 'next/link';
 
+import { SiteLink as Link } from '@/components/site-link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -25,7 +25,13 @@ export function ModelsExplorer({
 }: {
   initialQuery?: string;
 }) {
-  const [query, setQuery] = useState(initialQuery);
+  const locationQuery = useSyncExternalStore(
+    () => () => {},
+    () => new URLSearchParams(window.location.search).get('q') ?? initialQuery,
+    () => initialQuery,
+  );
+  const [editedQuery, setEditedQuery] = useState<string | null>(null);
+  const query = editedQuery ?? locationQuery;
   const [filter, setFilter] = useState('全部');
 
   const visible = useMemo(() => {
@@ -49,7 +55,7 @@ export function ModelsExplorer({
           <Search className="ml-2 size-4 text-[#7f889b]" />
           <Input
             value={query}
-            onChange={(event) => setQuery(event.target.value)}
+            onChange={(event) => setEditedQuery(event.target.value)}
             className="h-10 border-0 shadow-none focus-visible:ring-0"
             placeholder="搜索模型、厂商或适用任务"
             aria-label="搜索模型"

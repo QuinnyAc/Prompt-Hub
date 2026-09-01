@@ -6,9 +6,9 @@ import {
   GitBranch,
   Radio,
 } from 'lucide-react';
-import Link from 'next/link';
 
 import { Badge } from '@/components/ui/badge';
+import { SiteLink as Link } from '@/components/site-link';
 import { PageHero, SiteFooter, SiteHeader } from '@/components/site-shell';
 import { updates } from '@/lib/site-data';
 

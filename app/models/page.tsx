@@ -9,12 +9,7 @@ export const metadata: Metadata = {
   description: '按能力、任务、成本、速度和部署方式比较全球主流海外 AI 模型。',
 };
 
-export default async function ModelsPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ q?: string }>;
-}) {
-  const { q } = await searchParams;
+export default function ModelsPage() {
   return (
     <main className="min-h-screen bg-[#f7f9fc]">
       <SiteHeader />
@@ -43,7 +38,7 @@ export default async function ModelsPage({
         </div>
       </PageHero>
       <section className="mx-auto max-w-[1440px] px-5 py-10 lg:px-10 lg:py-14">
-        <ModelsExplorer initialQuery={q} />
+        <ModelsExplorer />
       </section>
       <SiteFooter />
     </main>

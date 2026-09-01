@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { GitCompareArrows, Menu, Sparkles } from 'lucide-react';
-import Link from 'next/link';
 
+import { SiteLink as Link } from '@/components/site-link';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
