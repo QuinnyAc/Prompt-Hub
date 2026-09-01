@@ -6,12 +6,9 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const nav = [
-  ['模型排名', '/models'],
   ['Prompt 库', '/prompts'],
+  ['模型动态', '/models'],
   ['职业方案', '/roles'],
-  ['实战工作流', '/workflows'],
-  ['更新中心', '/updates'],
-  ['评测方法', '/methodology'],
 ];
 
 export function SiteHeader() {
@@ -104,8 +101,8 @@ export function SiteFooter() {
           </p>
         </div>
         <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-[#697287]">
-          <Link href="/methodology">评测方法</Link>
-          <Link href="/updates">更新日志</Link>
+          <Link href="/prompts">Prompt 库</Link>
+          <Link href="/models">模型动态</Link>
           <a href="https://github.com/QuinnyAc/Prompt-Hub">GitHub</a>
         </div>
       </div>

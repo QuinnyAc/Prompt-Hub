@@ -15,8 +15,8 @@ export default function PromptsPage() {
       <SiteHeader />
       <PageHero
         eyebrow="PROMPT PLAYBOOK"
-        title="提示词多备点，临时抱佛脚也专业点。"
-        description="覆盖开发、产品、创业、管理、营销、销售、客服、招聘、设计与研究。每条都写清输入资料、执行步骤、输出标准和防胡编要求。"
+        title="缺哪种脑子，就请哪位专家上班。"
+        description="按资深策划、顶级架构师、世界级管理专家、思维训练教练、神经优化导师、数据分析师等专家角色分类。每条都写清输入、步骤、标准和防胡编要求。"
       />
       <section className="mx-auto max-w-[1440px] px-5 py-10 lg:px-10 lg:py-14">
         <PromptLibrary />

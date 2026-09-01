@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useSyncExternalStore } from 'react';
 import {
   BookOpenText,
   Check,
@@ -18,9 +18,9 @@ import {
 } from '@/components/ui/native-select';
 import { prompts } from '@/lib/site-data';
 
-const roles = [
-  '全部',
-  ...Array.from(new Set(prompts.map((prompt) => prompt.role))),
+const experts = [
+  '全部专家',
+  ...Array.from(new Set(prompts.map((prompt) => prompt.persona))),
 ];
 
 const categories = [
@@ -29,8 +29,14 @@ const categories = [
 ];
 
 export function PromptLibrary() {
-  const [query, setQuery] = useState('');
-  const [role, setRole] = useState('全部');
+  const locationQuery = useSyncExternalStore(
+    () => () => {},
+    () => new URLSearchParams(window.location.search).get('q') ?? '',
+    () => '',
+  );
+  const [editedQuery, setEditedQuery] = useState<string | null>(null);
+  const query = editedQuery ?? locationQuery;
+  const [expert, setExpert] = useState('全部专家');
   const [category, setCategory] = useState('全部任务');
   const [copied, setCopied] = useState<string | null>(null);
 
@@ -38,14 +44,14 @@ export function PromptLibrary() {
     () =>
       prompts.filter((prompt) => {
         const text =
-          `${prompt.title} ${prompt.role} ${prompt.category} ${prompt.summary} ${prompt.template}`.toLowerCase();
+          `${prompt.title} ${prompt.persona} ${prompt.role} ${prompt.category} ${prompt.summary} ${prompt.template}`.toLowerCase();
         return (
-          (role === '全部' || prompt.role === role) &&
+          (expert === '全部专家' || prompt.persona === expert) &&
           (category === '全部任务' || prompt.category === category) &&
           text.includes(query.trim().toLowerCase())
         );
       }),
-    [category, query, role],
+    [category, expert, query],
   );
 
   async function copyPrompt(slug: string, template: string) {
@@ -62,7 +68,7 @@ export function PromptLibrary() {
           <Search className="ml-2 size-4 text-[#80899b]" />
           <Input
             value={query}
-            onChange={(event) => setQuery(event.target.value)}
+            onChange={(event) => setEditedQuery(event.target.value)}
             className="h-10 border-0 shadow-none focus-visible:ring-0"
             placeholder="搜索任务、职业或 Prompt"
             aria-label="搜索 Prompt"
@@ -89,14 +95,14 @@ export function PromptLibrary() {
         </div>
         <div className="mt-3 flex items-center gap-2 overflow-x-auto border-t border-[#edf0f5] pt-3">
           <span className="ml-2 shrink-0 text-xs font-medium text-[#7d8698]">
-            按职位：
+            按专家：
           </span>
-          {roles.map((item) => (
+          {experts.map((item) => (
             <Button
               key={item}
-              onClick={() => setRole(item)}
-              variant={role === item ? 'default' : 'ghost'}
-              className={`shrink-0 rounded-xl ${role === item ? 'bg-[#1746d1]' : ''}`}
+              onClick={() => setExpert(item)}
+              variant={expert === item ? 'default' : 'ghost'}
+              className={`shrink-0 rounded-xl ${expert === item ? 'bg-[#1746d1]' : ''}`}
             >
               {item}
             </Button>
@@ -122,8 +128,9 @@ export function PromptLibrary() {
                   variant="secondary"
                   className="bg-[#eef3ff] text-[#315dca]"
                 >
-                  {prompt.role}
+                  {prompt.persona}
                 </Badge>
+                <Badge variant="outline">适用：{prompt.role}</Badge>
                 <Badge variant="outline">{prompt.level}</Badge>
               </div>
               <span className="text-[10px] text-[#8a92a4]">

@@ -1,19 +1,16 @@
 import {
   ArrowRight,
-  BarChart3,
   BookOpenText,
   Bot,
   BriefcaseBusiness,
   ChevronRight,
   Code2,
-  DatabaseZap,
   GitCompareArrows,
   Menu,
   Radar,
   Search,
   ShieldCheck,
   Sparkles,
-  TrendingUp,
   Workflow,
 } from 'lucide-react';
 
@@ -21,34 +18,20 @@ import { SiteLink as Link } from '@/components/site-link';
 import { Badge } from '@/components/ui/badge';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { prompts } from '@/lib/site-data';
 import { cn } from '@/lib/utils';
 
-const ranking = [
-  {
-    rank: '01',
-    model: 'Claude Opus 5',
-    maker: 'Anthropic',
-    score: '63',
-    tag: '综合智能',
-    tone: 'bg-[#f0e9ff] text-[#6d28d9]',
-  },
-  {
-    rank: '02',
-    model: 'GPT-5.6 Sol',
-    maker: 'OpenAI',
-    score: '61',
-    tag: '专业生产力',
-    tone: 'bg-[#e9f8f2] text-[#087a55]',
-  },
-  {
-    rank: '03',
-    model: 'Grok 4.6',
-    maker: 'xAI',
-    score: '61',
-    tag: '推理与搜索',
-    tone: 'bg-[#eef3ff] text-[#2857c5]',
-  },
+const featuredPromptSlugs = [
+  'architecture-review',
+  'executive-decision',
+  'argument-stress-test',
+  'metric-diagnosis',
 ];
+
+const featuredPrompts = featuredPromptSlugs.flatMap((slug) => {
+  const prompt = prompts.find((item) => item.slug === slug);
+  return prompt ? [prompt] : [];
+});
 
 const roles = [
   { label: '程序员奴隶', icon: Code2, detail: '让 AI 写，让自己少掉头发' },
@@ -64,8 +47,8 @@ const roles = [
 const stats = [
   { value: '175+', label: '主流模型持续追踪' },
   { value: '12', label: '专业评测维度' },
-  { value: '100+', label: '精选 Prompt 模板' },
-  { value: '24/7', label: '模型情报自动更新' },
+  { value: String(prompts.length), label: '顶尖 Prompt 持续上新' },
+  { value: '24/7', label: 'Prompt 与模型动态更新' },
 ];
 
 export default function Home() {
@@ -97,32 +80,23 @@ export default function Home() {
             className="hidden items-center gap-7 text-sm font-medium text-[#596176] lg:flex"
             aria-label="主导航"
           >
-            <Link className="text-[#1746d1]" href="/models">
-              模型排名
-            </Link>
             <Link
-              className="transition-colors hover:text-[#1746d1]"
+              className="text-[#1746d1]"
               href="/prompts"
             >
               Prompt 库
             </Link>
             <Link
               className="transition-colors hover:text-[#1746d1]"
+              href="/models"
+            >
+              模型动态
+            </Link>
+            <Link
+              className="transition-colors hover:text-[#1746d1]"
               href="/roles"
             >
               职业方案
-            </Link>
-            <Link
-              className="transition-colors hover:text-[#1746d1]"
-              href="/updates"
-            >
-              更新中心
-            </Link>
-            <Link
-              className="transition-colors hover:text-[#1746d1]"
-              href="/methodology"
-            >
-              评测方法
             </Link>
           </nav>
 
@@ -175,7 +149,7 @@ export default function Home() {
 
             <form
               className="mt-8 max-w-2xl rounded-2xl border border-[#dce2ee] bg-white p-2 shadow-[0_18px_55px_rgba(27,44,94,0.1)]"
-              action={siteBasePath ? `${siteBasePath}/models/` : '/models'}
+              action={siteBasePath ? `${siteBasePath}/prompts/` : '/prompts'}
             >
               <label htmlFor="task-search" className="sr-only">
                 描述你想用 AI 完成的任务
@@ -186,7 +160,7 @@ export default function Home() {
                   id="task-search"
                   name="q"
                   className="h-12 border-0 px-1 text-[15px] shadow-none focus-visible:ring-0"
-                  placeholder="例如：为我的 SaaS 设计从调研到上线的 AI 工作流"
+                  placeholder="例如：架构评审、战略规划、数据分析、管理沟通"
                 />
                 <Button
                   type="submit"
@@ -203,7 +177,7 @@ export default function Home() {
                 (item) => (
                   <Link
                     key={item}
-                    href={`/models?q=${encodeURIComponent(item)}`}
+                    href={`/prompts?q=${encodeURIComponent(item)}`}
                     className="rounded-full border border-[#e2e6ef] bg-[#fafbfe] px-3 py-1.5 transition hover:border-[#b9c9f5] hover:text-[#1746d1]"
                   >
                     {item}
@@ -214,69 +188,60 @@ export default function Home() {
           </div>
 
           <aside
-            id="rankings"
+            id="featured-prompts"
             className="self-end rounded-[28px] border border-[#dfe4ee] bg-[#fbfcff] p-4 shadow-[0_24px_70px_rgba(27,44,94,0.1)] sm:p-6"
           >
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
                 <div className="mb-2 flex items-center gap-2 text-xs font-semibold text-[#1746d1]">
-                  <BarChart3 className="size-4" /> 综合智能参考
+                  <BookOpenText className="size-4" /> 顶尖 Prompt 精选
                 </div>
                 <h2 className="text-xl font-semibold tracking-[-0.03em]">
-                  今天谁最能打
+                  今天先请哪位专家上班
                 </h2>
                 <p className="mt-1 text-xs text-[#80899c]">
-                  来源：Artificial Analysis · 2026-09-01
+                  专业模板持续补充与复核
                 </p>
               </div>
               <Badge
                 variant="secondary"
                 className="bg-[#eaf7f1] text-[#087a55]"
               >
-                已核验
+                {prompts.length} 条
               </Badge>
             </div>
 
             <div className="space-y-2">
-              {ranking.map((item) => (
-                <div
-                  key={item.model}
+              {featuredPrompts.map((prompt, index) => (
+                <Link
+                  key={prompt.slug}
+                  href={`/prompts?q=${encodeURIComponent(prompt.title)}`}
                   className="group grid grid-cols-[38px_1fr_auto] items-center gap-3 rounded-2xl border border-[#e7eaf1] bg-white p-3.5 transition hover:-translate-y-0.5 hover:border-[#cbd7f6] hover:shadow-[0_10px_24px_rgba(31,54,112,0.08)]"
                 >
                   <span className="font-mono text-xs font-semibold text-[#9aa2b2]">
-                    {item.rank}
+                    {String(index + 1).padStart(2, '0')}
                   </span>
                   <div className="min-w-0">
-                    <div className="flex items-center gap-2">
-                      <strong className="truncate text-sm">{item.model}</strong>
-                      {item.rank === '01' && (
-                        <TrendingUp className="size-3.5 text-[#15966a]" />
-                      )}
-                    </div>
+                    <strong className="block truncate text-sm">
+                      {prompt.title}
+                    </strong>
                     <div className="mt-1 flex flex-wrap items-center gap-2 text-[11px] text-[#8991a2]">
-                      <span>{item.maker}</span>
-                      <span className={`rounded-full px-2 py-0.5 ${item.tone}`}>
-                        {item.tag}
+                      <span>{prompt.role}</span>
+                      <span className="rounded-full bg-[#eef3ff] px-2 py-0.5 text-[#2857c5]">
+                        {prompt.persona}
                       </span>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <strong className="text-lg tabular-nums">
-                      {item.score}
-                    </strong>
-                    <span className="block text-[10px] text-[#9aa2b2]">
-                      能力指数
-                    </span>
-                  </div>
-                </div>
+                  <ChevronRight className="size-4 text-[#a0a7b5] transition group-hover:translate-x-1 group-hover:text-[#1746d1]" />
+                </Link>
               ))}
             </div>
 
             <Link
-              href="/models"
+              href="/prompts"
               className="mt-4 flex items-center justify-between rounded-xl px-2 py-2 text-xs font-medium text-[#566077] transition hover:bg-[#f0f4ff] hover:text-[#1746d1]"
             >
-              查看完整榜单与评分依据 <ChevronRight className="size-4" />
+              查看完整 Prompt 库 <ChevronRight className="size-4" />
             </Link>
           </aside>
         </div>
@@ -294,6 +259,65 @@ export default function Home() {
               </span>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section
+        id="prompts"
+        className="border-b border-[#e5e9f2] bg-[#101a34] text-white"
+      >
+        <div className="mx-auto grid max-w-[1440px] gap-10 px-5 py-16 lg:grid-cols-[0.75fr_1.25fr] lg:px-10 lg:py-20">
+          <div>
+            <h2 className="text-3xl font-semibold tracking-[-0.045em] sm:text-4xl">
+              Prompt 写好了，复制就能交差
+            </h2>
+            <p className="mt-5 max-w-md leading-7 text-[#aab4cb]">
+              每个模板都注明适用模型、输入资料、变量、输出标准、失败处理和进阶调整方法。
+            </p>
+            <Link
+              href="/prompts"
+              className={cn(
+                buttonVariants({ variant: 'outline' }),
+                'mt-7 h-10 border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white',
+              )}
+            >
+              探索 Prompt 库 <ArrowRight />
+            </Link>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[
+              {
+                icon: Bot,
+                title: '世界级管理专家',
+                meta: '决策、绩效与组织管理',
+              },
+              {
+                icon: Code2,
+                title: '顶级架构师',
+                meta: '架构、代码、安全与测试',
+              },
+              {
+                icon: Radar,
+                title: '资深策划',
+                meta: '战略、产品、增长与营销',
+              },
+              {
+                icon: ShieldCheck,
+                title: '思维与神经优化导师',
+                meta: '论证压力测试与认知工作设计',
+              },
+            ].map(({ icon: Icon, title, meta }) => (
+              <Link
+                key={title}
+                href="/prompts"
+                className="group rounded-2xl border border-white/10 bg-white/[0.055] p-5 transition hover:border-[#6188ee]/60 hover:bg-white/[0.08]"
+              >
+                <Icon className="size-5 text-[#87a8ff]" />
+                <h3 className="mt-8 font-medium">{title}</h3>
+                <p className="mt-1 text-xs text-[#8995b0]">{meta}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -341,65 +365,6 @@ export default function Home() {
       </section>
 
       <section
-        id="prompts"
-        className="border-y border-[#e5e9f2] bg-[#101a34] text-white"
-      >
-        <div className="mx-auto grid max-w-[1440px] gap-10 px-5 py-16 lg:grid-cols-[0.75fr_1.25fr] lg:px-10 lg:py-20">
-          <div>
-            <h2 className="text-3xl font-semibold tracking-[-0.045em] sm:text-4xl">
-              Prompt 写好了，复制就能交差
-            </h2>
-            <p className="mt-5 max-w-md leading-7 text-[#aab4cb]">
-              每个模板都注明适用模型、输入资料、变量、输出标准、失败处理和进阶调整方法。
-            </p>
-            <Link
-              href="/prompts"
-              className={cn(
-                buttonVariants({ variant: 'outline' }),
-                'mt-7 h-10 border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white',
-              )}
-            >
-              探索 Prompt 库 <ArrowRight />
-            </Link>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {[
-              {
-                icon: Bot,
-                title: '给 Agent 立规矩',
-                meta: '18 个能直接用的模板',
-              },
-              {
-                icon: Code2,
-                title: '帮我看看代码会不会炸',
-                meta: '适配主流编程模型',
-              },
-              {
-                icon: Radar,
-                title: '这个生意到底能不能做',
-                meta: '含证据核验框架',
-              },
-              {
-                icon: ShieldCheck,
-                title: '交差前再检查一遍',
-                meta: '减少幻觉与遗漏',
-              },
-            ].map(({ icon: Icon, title, meta }) => (
-              <Link
-                key={title}
-                href="/prompts"
-                className="group rounded-2xl border border-white/10 bg-white/[0.055] p-5 transition hover:border-[#6188ee]/60 hover:bg-white/[0.08]"
-              >
-                <Icon className="size-5 text-[#87a8ff]" />
-                <h3 className="mt-8 font-medium">{title}</h3>
-                <p className="mt-1 text-xs text-[#8995b0]">{meta}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
         id="updates"
         className="mx-auto max-w-[1440px] px-5 py-16 lg:px-10 lg:py-24"
       >
@@ -438,42 +403,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section
-        id="methodology"
-        className="border-t border-[#e7eaf1] bg-[#f7f9fc]"
-      >
-        <div className="mx-auto grid max-w-[1440px] gap-6 px-5 py-12 sm:grid-cols-3 lg:px-10">
-          {[
-            {
-              icon: DatabaseZap,
-              title: '分数从哪来的，写清楚',
-              text: '展示原始来源、采集时间与评分版本。',
-            },
-            {
-              icon: GitCompareArrows,
-              title: '别问谁第一，先问干什么',
-              text: '不迷信唯一总榜，按任务与职业匹配模型。',
-            },
-            {
-              icon: ShieldCheck,
-              title: '消息不靠谱，就先别发',
-              text: '结构化数据自动更新，专业判断经过审核。',
-            },
-          ].map(({ icon: Icon, title, text }) => (
-            <div
-              key={title}
-              className="flex gap-4 rounded-2xl bg-white p-5 ring-1 ring-[#e3e7ef]"
-            >
-              <Icon className="mt-0.5 size-5 shrink-0 text-[#1746d1]" />
-              <div>
-                <h3 className="text-sm font-semibold">{title}</h3>
-                <p className="mt-1 text-xs leading-5 text-[#7b8499]">{text}</p>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 

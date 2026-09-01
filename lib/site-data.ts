@@ -161,6 +161,7 @@ export const models: Model[] = [
 export type PromptItem = {
   slug: string;
   title: string;
+  persona: string;
   role: string;
   category: string;
   level: '入门' | '进阶' | '专家';
@@ -172,6 +173,7 @@ export type PromptItem = {
 export const prompts: PromptItem[] = [
   {
     slug: 'architecture-review',
+    persona: '顶级架构师',
     title: '帮我看看这架构会不会炸',
     role: '程序员',
     category: '编程开发',
@@ -183,6 +185,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'debug-investigator',
+    persona: '顶级架构师',
     title: '先别乱改，看看 Bug 藏哪儿了',
     role: '程序员',
     category: '编程开发',
@@ -193,6 +196,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'startup-validation',
+    persona: '资深策划',
     title: '这个创业点子到底会不会凉',
     role: '创业者',
     category: '商业战略',
@@ -204,6 +208,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'competitive-research',
+    persona: '顶级研究专家',
     title: '把竞品扒明白，别全靠感觉',
     role: '创业者',
     category: '深度研究',
@@ -214,6 +219,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'product-prd',
+    persona: '资深策划',
     title: '把一团乱需求写成能干的 PRD',
     role: '产品经理',
     category: '产品设计',
@@ -224,6 +230,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'executive-decision',
+    persona: '世界级管理专家',
     title: '给农场主一页纸看懂怎么选',
     role: '农场主',
     category: '决策分析',
@@ -234,6 +241,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'content-system',
+    persona: '资深策划',
     title: '别天天憋选题，让 AI 排一个月',
     role: '内容创作者',
     category: '内容生产',
@@ -244,6 +252,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'data-analysis',
+    persona: '数据分析师',
     title: '别让数据瞎说，先把分析想清楚',
     role: '数据分析师',
     category: '数据分析',
@@ -254,6 +263,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'requirement-clarifier',
+    persona: '资深策划',
     title: '需求说得像谜语，先翻译成人话',
     role: '程序员',
     category: '需求分析',
@@ -264,6 +274,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'code-review',
+    persona: '顶级架构师',
     title: '代码先过堂，别让线上替你找问题',
     role: '程序员',
     category: '代码审查',
@@ -274,6 +285,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'test-strategy',
+    persona: '顶级架构师',
     title: '别只测能不能点，想想怎么把它搞坏',
     role: '程序员',
     category: '测试质量',
@@ -284,6 +296,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'api-design',
+    persona: '顶级架构师',
     title: '接口先设计好，省得前后端互相甩锅',
     role: '程序员',
     category: '接口设计',
@@ -294,6 +307,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'security-threat-model',
+    persona: '顶级架构师',
     title: '黑客还没来，先自己吓自己一遍',
     role: '程序员',
     category: '安全审查',
@@ -304,6 +318,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'user-interview-synthesis',
+    persona: '顶级研究专家',
     title: '访谈聊了一堆，别只挑老板爱听的',
     role: '产品经理',
     category: '用户研究',
@@ -314,6 +329,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'roadmap-prioritization',
+    persona: '资深策划',
     title: '需求都说紧急，那就排给证据看',
     role: '产品经理',
     category: '产品决策',
@@ -324,6 +340,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'unit-economics',
+    persona: '数据分析师',
     title: '生意看着热闹，到底一单赚不赚钱',
     role: '创业者',
     category: '商业分析',
@@ -334,6 +351,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'mvp-scope',
+    persona: '资深策划',
     title: 'MVP 不是少做点，是先证明最危险的事',
     role: '创业者',
     category: '产品验证',
@@ -344,6 +362,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'weekly-management',
+    persona: '管理学世界级专家',
     title: '会别开成连续剧，今天必须有结论',
     role: '农场主',
     category: '团队管理',
@@ -354,6 +373,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'campaign-brief',
+    persona: '资深策划',
     title: '活动别先做海报，先说清楚卖给谁',
     role: '市场运营',
     category: '营销策划',
@@ -364,6 +384,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'landing-page-copy',
+    persona: '资深策划',
     title: '落地页别喊口号，三秒说清能帮什么',
     role: '市场运营',
     category: '转化文案',
@@ -374,6 +395,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'growth-experiment',
+    persona: '数据分析师',
     title: '增长不是玄学，先把输赢写清楚',
     role: '市场运营',
     category: '增长实验',
@@ -384,6 +406,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'sql-review',
+    persona: '数据分析师',
     title: 'SQL 跑得动不算赢，别把库跑跪了',
     role: '数据分析师',
     category: 'SQL 分析',
@@ -394,6 +417,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'metric-diagnosis',
+    persona: '数据分析师',
     title: '指标突然掉了，先别急着找人背锅',
     role: '数据分析师',
     category: '异常分析',
@@ -404,6 +428,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'account-research',
+    persona: '顶级研究专家',
     title: '见客户前先做功课，别上来就问官网写的',
     role: '销售',
     category: '客户研究',
@@ -414,6 +439,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'discovery-call',
+    persona: '思维训练教练',
     title: '销售电话少讲自己，多把客户问明白',
     role: '销售',
     category: '销售沟通',
@@ -424,6 +450,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'sales-proposal',
+    persona: '资深策划',
     title: '提案别写成产品说明书，客户只关心结果',
     role: '销售',
     category: '方案提案',
@@ -434,6 +461,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'customer-reply',
+    persona: '世界级沟通教练',
     title: '客户已经冒火了，先别复制标准话术',
     role: '客服',
     category: '客户沟通',
@@ -444,6 +472,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'ticket-insights',
+    persona: '数据分析师',
     title: '工单别处理完就算，看看产品哪儿老挨骂',
     role: '客服',
     category: '服务分析',
@@ -454,6 +483,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'job-scorecard',
+    persona: '管理学世界级专家',
     title: '招聘别靠眼缘，先把要什么人说清楚',
     role: '人力资源',
     category: '招聘面试',
@@ -464,6 +494,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'performance-feedback',
+    persona: '世界级管理专家',
     title: '绩效沟通别绕弯，也别把人说自闭',
     role: '人力资源',
     category: '绩效管理',
@@ -474,6 +505,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'design-critique',
+    persona: '顶级体验设计师',
     title: '设计评审别说“感觉不对”，指出哪儿不对',
     role: '设计师',
     category: '体验设计',
@@ -484,6 +516,7 @@ export const prompts: PromptItem[] = [
   },
   {
     slug: 'research-synthesis',
+    persona: '顶级研究专家',
     title: '资料搜了一百篇，别最后只剩一锅粥',
     role: '研究员',
     category: '深度研究',
@@ -491,6 +524,28 @@ export const prompts: PromptItem[] = [
     model: 'Claude Opus 5 / Grok 4.6',
     summary: '用证据分级、冲突处理和置信度标注综合多来源研究材料。',
     template: `你是一名严谨的研究综合分析师。围绕 {{研究问题}} 分析 {{文献、网页或资料集}}。\n\n适用范围：{{地区、人群、时间}}\n最终决策或受众：{{用途}}\n\n规则：\n1. 建立来源表，记录作者、日期、来源类型、方法、样本和潜在利益冲突。\n2. 区分一手证据、二手综述、专家观点和媒体转述。\n3. 按研究质量而不是结论是否一致来分配权重。\n4. 对冲突结论解释可能来自定义、样本、方法或时间差异。\n5. 每个重要结论标注证据强度与置信度，不用单一来源外推。\n\n输出：执行摘要、证据矩阵、共识、争议、适用边界、关键缺口、可行动结论和进一步研究计划。严禁编造引用；无法核实的内容单独列出。`,
+  },
+  {
+    slug: 'argument-stress-test',
+    persona: '思维训练教练',
+    title: '这个结论听着很对，先把它往死里反驳',
+    role: '所有职业',
+    category: '批判思考',
+    level: '专家',
+    model: 'Claude Opus 5 / GPT-5.6 Sol',
+    summary: '拆解论证、隐藏假设与替代解释，让重要判断经得住反方挑战。',
+    template: `你是一名严格的思维训练教练。对 {{观点、方案或决策}} 做压力测试，目标是提高判断质量，不是为了抬杠。\n\n背景与目标：{{背景}}\n现有证据：{{证据}}\n决策期限与代价：{{约束}}\n\n请：\n1. 把结论还原成前提、推理链和可检验预测。\n2. 找出隐藏假设、概念偷换、选择性证据、相关因果混淆和基准率忽略。\n3. 用最强版本复述支持方，再给出最强反方论证。\n4. 提供至少 3 个替代解释，并说明如何用新证据区分。\n5. 指出什么证据会提高或降低置信度，设计最小验证行动。\n\n输出：论证地图、薄弱点、反方意见、替代解释、验证计划和经修正后的结论。不要为了显得平衡而制造没有依据的反对意见。`,
+  },
+  {
+    slug: 'cognitive-work-design',
+    persona: '神经优化导师',
+    title: '脑子不是无限续杯，工作得按电量排',
+    role: '知识工作者',
+    category: '专注与精力',
+    level: '进阶',
+    model: 'Claude Sonnet 4.6 / GPT-5.6 Sol',
+    summary: '按任务认知负荷、能量节律和恢复需求，设计更可持续的工作安排。',
+    template: `你是一名以行为科学为基础的认知工作设计教练。根据 {{任务清单、日程与个人偏好}} 设计一周工作安排。\n\n必须完成的成果：{{成果}}\n固定会议与截止时间：{{约束}}\n自述高低能量时段：{{时段}}\n常见干扰与切换成本：{{干扰}}\n\n请按深度思考、协作沟通、行政处理和恢复四类任务分析认知负荷；安排连续专注块、批量处理、缓冲时间和结束仪式。为每项安排说明理由、开始条件、最小时长和被打断后的恢复方式。\n\n输出：一周时间块、每日前三项、干扰规则、复盘指标和两种备用方案。不要提供医疗诊断、治疗建议或夸大神经科学结论；睡眠或心理健康问题应建议咨询合格专业人士。`,
   },
 ];
 

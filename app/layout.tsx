@@ -5,10 +5,10 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Prompt Hub｜农场主逼我做的 AI 指南',
   description:
-    '面向中国用户，聚焦全球主流海外 AI 模型的专业排名、使用指南、Prompt 与实战工作流平台。',
+    '面向中国用户的顶尖专业 Prompt 库，并持续追踪全球主流海外 AI 模型动态。',
   openGraph: {
     title: 'Prompt Hub｜农场主逼我做的',
-    description: '全球 AI 模型排名、专业 Prompt 与职业工作流，持续更新。',
+    description: '顶尖专业 Prompt 持续上新，全球 AI 模型排名与动态统一更新。',
     type: 'website',
     images: [
       {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Prompt Hub｜农场主逼我做的',
-    description: '全球 AI 模型排名、专业 Prompt 与职业工作流，持续更新。',
+    description: '顶尖专业 Prompt 持续上新，全球 AI 模型排名与动态统一更新。',
     images: [
       'https://raw.githubusercontent.com/QuinnyAc/Prompt-Hub/main/public/og.png',
     ],
