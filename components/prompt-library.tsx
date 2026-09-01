@@ -39,6 +39,7 @@ export function PromptLibrary() {
   const [expert, setExpert] = useState('全部专家');
   const [category, setCategory] = useState('全部任务');
   const [copied, setCopied] = useState<string | null>(null);
+  const [visibleCount, setVisibleCount] = useState(12);
 
   const visible = useMemo(
     () =>
@@ -64,21 +65,27 @@ export function PromptLibrary() {
     <div>
       <div className="rounded-2xl border border-[#dfe4ed] bg-white p-3 shadow-[0_12px_32px_rgba(28,45,91,0.06)]">
         <div className="grid gap-3 lg:grid-cols-[minmax(260px,1fr)_auto]">
-        <div className="flex items-center gap-2">
-          <Search className="ml-2 size-4 text-[#80899b]" />
-          <Input
-            value={query}
-            onChange={(event) => setEditedQuery(event.target.value)}
-            className="h-10 border-0 shadow-none focus-visible:ring-0"
-            placeholder="搜索任务、职业或 Prompt"
-            aria-label="搜索 Prompt"
-          />
-        </div>
+          <div className="flex items-center gap-2">
+            <Search className="ml-2 size-4 text-[#80899b]" />
+            <Input
+              value={query}
+              onChange={(event) => {
+                setEditedQuery(event.target.value);
+                setVisibleCount(12);
+              }}
+              className="h-10 border-0 shadow-none focus-visible:ring-0"
+              placeholder="搜索专家、行业、任务或 Prompt"
+              aria-label="搜索 Prompt"
+            />
+          </div>
           <div className="flex items-center gap-2">
             <SlidersHorizontal className="ml-2 size-4 shrink-0 text-[#8991a2]" />
             <NativeSelect
               value={category}
-              onChange={(event) => setCategory(event.target.value)}
+              onChange={(event) => {
+                setCategory(event.target.value);
+                setVisibleCount(12);
+              }}
               className="min-w-44 flex-1 lg:flex-none"
               aria-label="按任务分类筛选"
             >
@@ -100,7 +107,10 @@ export function PromptLibrary() {
           {experts.map((item) => (
             <Button
               key={item}
-              onClick={() => setExpert(item)}
+              onClick={() => {
+                setExpert(item);
+                setVisibleCount(12);
+              }}
               variant={expert === item ? 'default' : 'ghost'}
               className={`shrink-0 rounded-xl ${expert === item ? 'bg-[#1746d1]' : ''}`}
             >
@@ -117,7 +127,7 @@ export function PromptLibrary() {
       </div>
 
       <div className="mt-7 grid gap-4 lg:grid-cols-2">
-        {visible.map((prompt) => (
+        {visible.slice(0, visibleCount).map((prompt) => (
           <article
             key={prompt.slug}
             className="flex flex-col rounded-3xl border border-[#e0e4ed] bg-white p-6 transition hover:-translate-y-0.5 hover:border-[#bfcdf2] hover:shadow-[0_18px_45px_rgba(26,45,92,0.08)]"
@@ -173,6 +183,20 @@ export function PromptLibrary() {
           </article>
         ))}
       </div>
+      {visibleCount < visible.length && (
+        <div className="mt-8 flex flex-col items-center gap-2">
+          <Button
+            variant="outline"
+            className="rounded-xl border-[#cfd8ec] bg-white px-6"
+            onClick={() => setVisibleCount((count) => count + 12)}
+          >
+            再看 12 条
+          </Button>
+          <span className="text-xs text-[#8a92a4]">
+            已显示 {Math.min(visibleCount, visible.length)} / {visible.length} 条
+          </span>
+        </div>
+      )}
       {visible.length === 0 && (
         <div className="py-16 text-center text-sm text-[#7d8699]">
           没有找到匹配的 Prompt。
