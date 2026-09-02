@@ -17,6 +17,7 @@ export type ApplicationPlan = {
   steps: [string, string, string];
   stack: string;
   promptQuery: string;
+  guideHref?: string;
 };
 
 export const applicationPlans: ApplicationPlan[] = [
@@ -80,8 +81,9 @@ export const applicationPlans: ApplicationPlan[] = [
     category: '视频与内容',
     summary: '把素材整理成节奏清楚、重点明确的成片方案。',
     steps: ['提供素材清单、受众和平台', '生成粗剪结构与时间轴', '补字幕、包装并人工看完整片'],
-    stack: '多模态模型 + 专业剪辑软件',
+    stack: 'ChatGPT + 剪映',
     promptQuery: '内容生产',
+    guideHref: '/roles/video-editing',
   },
   {
     slug: 'short-video-script',

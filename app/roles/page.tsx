@@ -149,10 +149,13 @@ export default function RolesPage() {
                           {plan.stack}
                         </p>
                         <Link
-                          href={`/prompts?q=${encodeURIComponent(plan.promptQuery)}`}
+                          href={
+                            plan.guideHref ??
+                            `/prompts?q=${encodeURIComponent(plan.promptQuery)}`
+                          }
                           className="mt-4 flex items-center justify-between rounded-xl bg-[#f1f5ff] px-3 py-2.5 text-xs font-semibold text-[#1746d1] transition hover:bg-[#e7eeff]"
                         >
-                          查看相关 Prompt
+                          {plan.guideHref ? '打开完整方案' : '查看相关 Prompt'}
                           <ArrowRight className="size-4" />
                         </Link>
                       </div>
