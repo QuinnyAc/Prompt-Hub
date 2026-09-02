@@ -71,7 +71,7 @@ export default function Home() {
                 Prompt Hub
               </strong>
               <span className="text-[10px] font-medium tracking-[0.08em] text-[#7b8499]">
-                老板逼我做的
+                Prompt收集
               </span>
             </span>
           </a>
