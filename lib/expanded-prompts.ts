@@ -4,7 +4,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'financial-forecast-scenarios',
     persona: '首席财务官',
-    title: '预测别只给一个数，顺便告诉我怎么翻车',
+    title: '财务情景预测',
     role: '财务与老板',
     category: '财务预测',
     level: '专家',
@@ -15,7 +15,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'budget-variance-review',
     persona: '首席财务官',
-    title: '预算又偏了，先找驱动因素别找替罪羊',
+    title: '预算差异分析',
     role: '财务与业务负责人',
     category: '经营分析',
     level: '专家',
@@ -26,7 +26,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'contract-risk-review',
     persona: '顶级法务顾问',
-    title: '合同看着都差不多，坑往往藏在小字里',
+    title: '合同风险审查',
     role: '法务、采购与老板',
     category: '合同审阅',
     level: '专家',
@@ -37,7 +37,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'compliance-impact-assessment',
     persona: '顶级法务顾问',
-    title: '新规一出来，先看看哪些流程要跟着遭殃',
+    title: '合规影响评估',
     role: '合规与管理层',
     category: '合规评估',
     level: '专家',
@@ -48,7 +48,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'sop-builder',
     persona: '世界级运营专家',
-    title: '经验都在人脑里，休个假公司就不会干了',
+    title: 'SOP 流程编写',
     role: '运营与团队负责人',
     category: '流程标准化',
     level: '进阶',
@@ -59,7 +59,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'process-bottleneck',
     persona: '世界级运营专家',
-    title: '大家都很忙，结果事情还是堵在半路',
+    title: '流程瓶颈分析',
     role: '运营与管理者',
     category: '流程优化',
     level: '专家',
@@ -70,7 +70,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'supplier-scorecard',
     persona: '供应链战略专家',
-    title: '供应商别只比报价，便宜可能是最贵的',
+    title: '供应商综合评估',
     role: '供应链与采购',
     category: '供应商管理',
     level: '专家',
@@ -81,7 +81,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'inventory-risk-plan',
     persona: '供应链战略专家',
-    title: '库存多了占钱，少了挨骂，算清楚再赌',
+    title: '库存风险规划',
     role: '供应链与运营',
     category: '库存规划',
     level: '专家',
@@ -92,7 +92,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'negotiation-prep',
     persona: '谈判专家',
-    title: '谈判不是嗓门大，先把底牌和退路算明白',
+    title: '商务谈判准备',
     role: '销售、采购与管理者',
     category: '商务谈判',
     level: '专家',
@@ -103,7 +103,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'rfp-evaluation',
     persona: '采购与成本专家',
-    title: '投标书都写得漂亮，统一尺子量才算数',
+    title: 'RFP 投标评审',
     role: '采购与项目团队',
     category: '采购决策',
     level: '专家',
@@ -114,7 +114,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'customer-qbr',
     persona: '客户成功专家',
-    title: 'QBR 别念数据，客户要听下一步值不值得续',
+    title: '客户 QBR 复盘',
     role: '客户成功与销售',
     category: '客户经营',
     level: '进阶',
@@ -125,7 +125,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'churn-rescue-plan',
     persona: '客户成功专家',
-    title: '客户想走，先弄清是真不值还是没用明白',
+    title: '客户流失挽回',
     role: '客户成功与客服',
     category: '流失挽回',
     level: '专家',
@@ -136,7 +136,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'brand-positioning',
     persona: '品牌战略大师',
-    title: '品牌不是换个口号，是说清楚凭什么选你',
+    title: '品牌定位',
     role: '品牌与创业者',
     category: '品牌定位',
     level: '专家',
@@ -147,7 +147,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'ecommerce-listing',
     persona: '电商增长专家',
-    title: '详情页别堆关键词，先回答顾客为什么不下单',
+    title: '电商详情页优化',
     role: '电商运营',
     category: '电商转化',
     level: '进阶',
@@ -158,7 +158,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'workforce-plan',
     persona: '人才战略专家',
-    title: '缺人不是答案，先算清楚缺的到底是什么能力',
+    title: '人才能力规划',
     role: 'HR 与管理层',
     category: '人才规划',
     level: '专家',
@@ -169,7 +169,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'onboarding-plan',
     persona: '人才战略专家',
-    title: '新人入职别只领电脑，九十天得知道怎么赢',
+    title: '新员工入职计划',
     role: '管理者与 HR',
     category: '员工培养',
     level: '进阶',
@@ -180,7 +180,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'lesson-design',
     persona: '顶级教育专家',
-    title: '课讲完不等于学会，先设计学生能做什么',
+    title: '课程教学设计',
     role: '教师与培训师',
     category: '课程设计',
     level: '专家',
@@ -191,7 +191,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'assessment-rubric',
     persona: '顶级教育专家',
-    title: '评分别凭感觉，优秀和合格得有清楚分界',
+    title: '学习评价量表',
     role: '教师与培训师',
     category: '学习评价',
     level: '进阶',
@@ -202,7 +202,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'research-design',
     persona: '学术研究导师',
-    title: '研究问题先站稳，别急着往统计软件里塞',
+    title: '学术研究设计',
     role: '研究人员与学生',
     category: '研究设计',
     level: '专家',
@@ -213,7 +213,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'peer-review',
     persona: '学术研究导师',
-    title: '论文别只挑语病，先看结论到底站不站得住',
+    title: '论文同行评审',
     role: '研究人员与审稿人',
     category: '论文审阅',
     level: '专家',
@@ -224,7 +224,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'patient-education',
     persona: '医疗信息顾问',
-    title: '医学说明别写得像天书，患者要知道下一步做什么',
+    title: '患者健康说明',
     role: '医疗沟通与健康内容',
     category: '健康科普',
     level: '进阶',
@@ -235,7 +235,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'clinical-evidence-summary',
     persona: '医疗信息顾问',
-    title: '一堆医学研究结论打架，先看证据等级',
+    title: '医学证据综述',
     role: '医疗研究与健康决策支持',
     category: '医学证据',
     level: '专家',
@@ -246,7 +246,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'incident-response',
     persona: '网络安全专家',
-    title: '安全事故先止血，别一边慌一边毁证据',
+    title: '安全事件响应',
     role: '安全与技术团队',
     category: '安全响应',
     level: '专家',
@@ -257,7 +257,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'vendor-security-review',
     persona: '网络安全专家',
-    title: '供应商说自己安全，不等于真的安全',
+    title: '供应商安全审查',
     role: '安全、采购与法务',
     category: '第三方风险',
     level: '专家',
@@ -268,7 +268,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'ai-use-case-prioritization',
     persona: 'AI 产品专家',
-    title: '不是哪里都塞 AI，先挑真能省钱赚钱的',
+    title: 'AI 场景优先级',
     role: '产品、技术与管理层',
     category: 'AI 战略',
     level: '专家',
@@ -279,7 +279,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'llm-evaluation-plan',
     persona: 'AI 产品专家',
-    title: '模型看着聪明，得拿真实脏活累活来考',
+    title: 'LLM 评测方案',
     role: 'AI 产品与工程团队',
     category: '模型评测',
     level: '专家',
@@ -290,7 +290,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'localization-brief',
     persona: '国际化专家',
-    title: '翻译对了还不够，到了当地得像人话',
+    title: '产品本地化方案',
     role: '国际业务与本地化',
     category: '本地化',
     level: '专家',
@@ -301,7 +301,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'cross-cultural-negotiation',
     persona: '国际化专家',
-    title: '跨文化沟通别背刻板印象，先确认对方怎么做决定',
+    title: '跨文化谈判',
     role: '国际销售与管理者',
     category: '跨文化沟通',
     level: '进阶',
@@ -312,7 +312,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'crisis-holding-statement',
     persona: '危机公关专家',
-    title: '事情还没查清，先说该说的，别嘴硬也别乱认',
+    title: '危机声明草案',
     role: '公关、法务与管理层',
     category: '危机沟通',
     level: '专家',
@@ -323,7 +323,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'crisis-stakeholder-map',
     persona: '危机公关专家',
-    title: '危机来了别只顾发微博，先看谁最需要被通知',
+    title: '危机沟通地图',
     role: '公关与管理层',
     category: '利益相关者管理',
     level: '专家',
@@ -334,7 +334,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'project-recovery',
     persona: '项目管理专家',
-    title: '项目已经飘了，先救最关键的，别假装全能保',
+    title: '项目救援计划',
     role: '项目经理与管理层',
     category: '项目救援',
     level: '专家',
@@ -345,7 +345,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'risk-register',
     persona: '项目管理专家',
-    title: '风险表别写“持续关注”，得写什么时候动手',
+    title: '项目风险登记',
     role: '项目经理',
     category: '风险管理',
     level: '进阶',
@@ -356,7 +356,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'eight-d-root-cause',
     persona: '制造质量专家',
-    title: '质量问题别急着怪操作员，先把系统原因挖出来',
+    title: '8D 根因分析',
     role: '制造、质量与工程',
     category: '质量改进',
     level: '专家',
@@ -367,7 +367,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'fmea-plan',
     persona: '制造质量专家',
-    title: '产品还没坏，先想清楚它会怎么坏',
+    title: 'FMEA 失效分析',
     role: '产品、制造与质量',
     category: '失效预防',
     level: '专家',
@@ -378,7 +378,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'executive-storytelling',
     persona: '顶级写作教练',
-    title: '汇报别从背景讲到天黑，先说要老板决定什么',
+    title: '高管汇报结构',
     role: '所有需要汇报的人',
     category: '商业写作',
     level: '进阶',
@@ -389,7 +389,7 @@ export const expandedPrompts: PromptItem[] = [
   {
     slug: 'presentation-rehearsal',
     persona: '演讲教练',
-    title: 'PPT 写完不算完，先把台上会卡的地方练出来',
+    title: '演讲彩排优化',
     role: '演讲者与管理者',
     category: '演讲表达',
     level: '进阶',

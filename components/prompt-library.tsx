@@ -2,7 +2,6 @@
 
 import { useMemo, useState, useSyncExternalStore } from 'react';
 import {
-  BookOpenText,
   Check,
   Copy,
   Search,
@@ -126,7 +125,7 @@ export function PromptLibrary() {
         <p><strong className="text-[#173b96]">③ 分轮执行：</strong>复杂任务先让模型提问，再生成，再按标准自检。</p>
       </div>
 
-      <div className="mt-7 grid gap-4 lg:grid-cols-2">
+      <div className="mt-7 grid items-start gap-4 md:grid-cols-2 lg:grid-cols-3">
         {visible.slice(0, visibleCount).map((prompt) => (
           <article
             key={prompt.slug}
@@ -153,19 +152,9 @@ export function PromptLibrary() {
             <p className="mt-2 text-sm leading-6 text-[#727b8f]">
               {prompt.summary}
             </p>
-            <div className="mt-5 max-h-36 flex-1 overflow-hidden whitespace-pre-wrap rounded-2xl border border-[#e6e9f0] bg-[#f8f9fc] p-4 font-mono text-[11px] leading-5 text-[#596176] [mask-image:linear-gradient(to_bottom,black_60%,transparent)]">
+            <pre className="mt-5 flex-1 whitespace-pre-wrap rounded-2xl border border-[#e6e9f0] bg-[#f8f9fc] p-4 font-mono text-[11px] leading-5 text-[#48536b]">
               {prompt.template}
-            </div>
-            <details className="group mt-3 rounded-2xl border border-[#e6e9f0] bg-white open:bg-[#f8f9fc]">
-              <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-sm font-medium text-[#315dca] [&::-webkit-details-marker]:hidden">
-                <BookOpenText className="size-4" />
-                <span className="group-open:hidden">查看完整 Prompt</span>
-                <span className="hidden group-open:inline">收起完整 Prompt</span>
-              </summary>
-              <pre className="max-h-[60vh] overflow-y-auto whitespace-pre-wrap border-t border-[#e6e9f0] px-4 py-4 font-mono text-xs leading-6 text-[#48536b]">
-                {prompt.template}
-              </pre>
-            </details>
+            </pre>
             <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
               <span className="text-xs font-medium text-[#7d8698]">
                 {prompt.category}
