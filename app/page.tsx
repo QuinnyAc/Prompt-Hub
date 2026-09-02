@@ -96,7 +96,7 @@ export default function Home() {
               className="transition-colors hover:text-[#1746d1]"
               href="/roles"
             >
-              职业方案
+              应用方案
             </Link>
           </nav>
 
@@ -338,7 +338,7 @@ export default function Home() {
             href="/roles"
             className="flex items-center gap-1 text-sm font-semibold text-[#1746d1]"
           >
-            浏览全部职业方案 <ArrowRight className="size-4" />
+            浏览全部应用方案 <ArrowRight className="size-4" />
           </Link>
         </div>
 

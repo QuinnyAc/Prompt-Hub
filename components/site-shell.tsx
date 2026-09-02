@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 const nav = [
   ['Prompt 库', '/prompts'],
   ['模型动态', '/models'],
-  ['职业方案', '/roles'],
+  ['应用方案', '/roles'],
 ];
 
 export function SiteHeader() {

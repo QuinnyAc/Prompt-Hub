@@ -19,7 +19,7 @@ export default function ModelsPage() {
       <SiteHeader />
       <PageHero
         eyebrow="MODEL INTELLIGENCE"
-        title="模型排名和更新，放一起省得来回找。"
+        title="模型排名和更新"
         description="上面看谁更能打，下面看谁刚变了。独立评测、人类偏好、价格、速度与重要更新统一放在“模型动态”。"
       >
         <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-[#6f788c]">
