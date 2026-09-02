@@ -2,10 +2,11 @@ import {
   ArrowRight,
   BookOpenText,
   Bot,
-  BriefcaseBusiness,
   ChevronRight,
+  Clapperboard,
   Code2,
   GitCompareArrows,
+  GraduationCap,
   Menu,
   Radar,
   Search,
@@ -33,15 +34,11 @@ const featuredPrompts = featuredPromptSlugs.flatMap((slug) => {
   return prompt ? [prompt] : [];
 });
 
-const roles = [
-  { label: '程序员奴隶', icon: Code2, detail: '让 AI 写，让自己少掉头发' },
-  {
-    label: '创业者与农场主',
-    icon: BriefcaseBusiness,
-    detail: '先验证，别急着烧钱',
-  },
-  { label: '研究奴隶', icon: BookOpenText, detail: '少翻网页，多查证据' },
-  { label: '产品运营奴隶', icon: Workflow, detail: '需求再乱也得交差' },
+const applicationPreviews = [
+  { label: '写代码', icon: Code2, detail: '从需求拆解到测试审查' },
+  { label: '剪视频', icon: Clapperboard, detail: '从素材到时间轴和成片' },
+  { label: '做网站', icon: Workflow, detail: '从页面规划到部署检查' },
+  { label: '修改学术论文', icon: GraduationCap, detail: '从论证结构到语言规范' },
 ];
 
 const stats = [
@@ -328,10 +325,10 @@ export default function Home() {
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <p className="mb-3 text-xs font-semibold tracking-[0.16em] text-[#1746d1]">
-              从你的工作开始
+              从要做的事开始
             </p>
             <h2 className="text-3xl font-semibold tracking-[-0.045em] sm:text-4xl">
-              给不同职位的奴隶找了一套 AI 用法
+              按具体操作找 AI 应用方案
             </h2>
           </div>
           <Link
@@ -343,7 +340,7 @@ export default function Home() {
         </div>
 
         <div className="mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {roles.map(({ label, icon: Icon, detail }, index) => (
+          {applicationPreviews.map(({ label, icon: Icon, detail }, index) => (
             <Link
               key={label}
               href="/roles"
