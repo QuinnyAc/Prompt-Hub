@@ -15,7 +15,7 @@ export default function PromptsPage() {
       <SiteHeader />
       <PageHero
         eyebrow="PROMPT PLAYBOOK"
-        title="老板逼我做的"
+        title="prompt收集"
         description="覆盖技术、经营、财务、法务、运营、教育、医疗信息、安全、供应链、制造等领域，并按顶级专家角色分类。每条都写清输入、步骤、标准和风险边界。"
       />
       <section className="mx-auto max-w-[1440px] px-5 py-10 lg:px-10 lg:py-14">
